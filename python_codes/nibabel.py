@@ -156,3 +156,31 @@ anat_flipped.to_filename(anat_flipped.get_filename())
 # nifti.file_map is a dictionary:
 # keys are the names of the files used to load / save on disk
 print(anat.file_map['image'].filename)
+
+
+
+
+# Turn dicoms into 3D volume:
+
+path = '...'
+imageList = os.listdir(path)
+slices = [dicom.read_file(path + imageName, force=True)
+          for imageName in imageList]
+
+# this step is really important: it sorts the slices.
+slices = sorted(slices, key=lambda x:x.ImagePositionPatient[2])
+
+
+pixel_spacing = slices[0].PixelSpacing
+slice_thickness = slices[0].SliceThickness
+axial_aspect_ratio = pixel_spacing[1] / pixel_spacing[0]
+sagittal_aspect_ratio = pixel_spacing[1] / slice_thickness
+coronal_aspect_ratio = slice_thickness / pixel_spacing[0]
+image_shape = list(slices[0].pixel_array.shape)
+image_shape.append(len(slices))
+
+volume3d = np.zeros(image_shape)
+
+for i, s in enumerate(slices):
+    array2d = s.pixel_array
+    volume3d[:, :, i] = array2d

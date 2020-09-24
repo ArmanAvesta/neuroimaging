@@ -11,8 +11,6 @@ z = zscore(135, 100, 15)
 p = st.norm.cdf(z)
 p_complement = 1 - p
 
-SE = .07 / math.sqrt(29)
-
 
 
 # Independent-samples t-test

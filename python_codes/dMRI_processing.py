@@ -145,7 +145,7 @@ def show_orientation(metaimage):
 
 
 
-# DIPY basics
+# Load data
 # -----------------------------------------------------------------------------
 from dipy.io.image import load_nifti
 from dipy.io import read_bvals_bvecs

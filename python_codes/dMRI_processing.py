@@ -806,8 +806,8 @@ ax.flat[2].annotate('Rings', fontsize=10, xy=(81, 70),
 plt.show()
 # fig1.savefig('Gibbs_suppression_structural.png')
 
-# Not let's do Gibbs removal on diffusion images.
-# first, load noisy data provided by CENIR, ICM, Paris:
+# Now let's do Gibbs removal on diffusion images.
+# noisy data provided by CENIR, ICM, Paris:
 from dipy.data import read_cenir_multib
 bvals = [200, 400, 1000, 2000]
 metaimage, gtab = read_cenir_multib(bvals)

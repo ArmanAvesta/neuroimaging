@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import nibabel as nib
 
 # Set numpy to print 3 decimal points and suppress small values
 np.set_printoptions(precision=2, suppress=True)

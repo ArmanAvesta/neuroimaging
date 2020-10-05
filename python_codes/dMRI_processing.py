@@ -150,7 +150,7 @@ def show_orientation(metaimage):
 from dipy.io.image import load_nifti
 from dipy.io import read_bvals_bvecs
 from dipy.core.gradients import gradient_table
-from python_codes.nibabel import flip_axis
+from nibabel import flip_axis
 
 import numpy as np
 
@@ -159,7 +159,7 @@ from os.path import expanduser, join
 
 # load the data:
 home = expanduser('~')
-path = join(home, 'Projects', 'neuroimaging', '../data/dipy')
+path = join(home, 'Projects', 'neuroimaging', 'data/dipy')
 os.chdir(path)
 diff_path = join('subject1', 'dwi_orig.nii.gz')
 

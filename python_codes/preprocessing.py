@@ -60,7 +60,7 @@ epi_center_coordinates1 = afftrans(M, abc,
 epi_center_coordinates2 = epi.affine.dot(list(epi_center) + [1])
 
 # nibabel's apply_affine function:
-from python_codes.nibabel import apply_affine
+from python_codes.preprocessing import apply_affine
 
 epi_center_coordinates3 = apply_affine(epi.affine, epi_center)
 

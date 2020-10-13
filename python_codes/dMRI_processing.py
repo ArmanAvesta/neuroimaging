@@ -135,7 +135,7 @@ def show_image_equalized(img, voxel_size=voxel_size):
 
 
 def show_orientation(metaimage):
-    from python_codes.nibabel import aff2axcodes
+    from nibabel import aff2axcodes
     print(aff2axcodes(metaimage.affine))
 
 
